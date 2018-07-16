@@ -16,10 +16,11 @@ import com.example.repository.UserRepository;
 @EnableJpaAuditing
 public class CrudBackendApplication {
 	//@Autowired
-	//private UserRepository userRepository;
+	private UserRepository userRepository;
 	
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		SpringApplication.run(CrudBackendApplication.class, args);
+		userRepository.save(new User("one", "one", "one@gmail.com", "0724586111","1234567889"));
 	}
 }
 /*
