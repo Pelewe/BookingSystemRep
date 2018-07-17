@@ -39,12 +39,12 @@ public class UserController {
 	}
 	
 	@PutMapping("/user")
-	public User updateUser(User user){
+	public User updateUser(@RequestBody User user){
 		return userRepository.save(user);
 	}
 	
 	@PostMapping("/user")
-	public User createUser(User user){
+	public User createUser(@RequestBody User user){
 		return userRepository.save(user);
 	}
 }
