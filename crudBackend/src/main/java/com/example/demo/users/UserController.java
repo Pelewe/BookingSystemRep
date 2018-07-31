@@ -36,7 +36,7 @@ public class UserController {
 	
 	
 	@GetMapping(value="/user/last_name/{last_name}")
-	public List<User> searchUser(@ModelAttribute("form") @PathVariable String name){
+	public List<User> searchUser(@PathVariable String name){
 		
 		return userService.searchUser(name);
 	}
