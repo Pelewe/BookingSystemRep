@@ -1,5 +1,10 @@
 package com.example.demo.repository;
 
-public interface locationRep {
 
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.model.location;
+
+public interface locationRep extends CrudRepository<location, Integer> {
+	
 }

@@ -38,8 +38,6 @@ public class User{
 	private int user_type;
 	
 	
-	
-	
 	public String getPassword() {
 		return Password;
 	}
@@ -48,6 +46,9 @@ public class User{
 	}
 	public Long getId() {
 		return id;
+	}
+	public int getUserType() {
+		return user_type;
 	}
 	public void setId(Long id) {
 		this.id = id;

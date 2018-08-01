@@ -1,5 +1,11 @@
 package com.example.demo.repository;
+import java.util.List;
 
-public interface userTypeRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.model.usertype;
+/*
+public interface userTypeRepository extends CrudRepository<usertype, Integer> {
 
 }
+*/
