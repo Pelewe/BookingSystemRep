@@ -11,17 +11,19 @@ import javax.persistence.Table;
 import java.text.SimpleDateFormat;
 
 
-//@Entity
-//@Table(name="payment")
+@Entity
+@Table(name="payment")
 public class payment {
-	//@cardNo
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long Payment_Id;
+	private Long user_Id;
 	private String cardType;
-	private long cardNo;
+	private Long cardNo;
 	private Date expirationDate;
 	private int crcCode;
-	private long custNo;
+	private Date paymentDate;
 	private String booking_no;
-	private Date bookingDate;
 	
 	public payment() {
 		super();
@@ -40,7 +42,7 @@ public class payment {
 		return cardNo;
 	}
 
-	public void setCardNo(long cardNo) {
+	public void setCardNo(Long cardNo) {
 		this.cardNo = cardNo;
 	}
 
@@ -60,19 +62,32 @@ public class payment {
 		this.crcCode = crcCode;
 	}
 
-	public long getCustNo() {
-		return custNo;
+
+	public Long getPayment_Id() {
+		return Payment_Id;
 	}
 
-	public void setCustNo(long custNo) {
-		this.custNo = custNo;
+	public Long getUser_Id() {
+		return user_Id;
+	}
+
+	public void setUser_Id(Long user_Id) {
+		this.user_Id = user_Id;
+	}
+
+	public Date getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
 	}
 
 	public String getBooking_no() {
 		return booking_no;
 	}
-	public Date bookingDate() {
-		return bookingDate;
+	public Date paymentDate() {
+		return paymentDate;
 	}
 	public void setBooking_no(String booking_no) {
 		this.booking_no = booking_no;
@@ -83,10 +98,29 @@ public class payment {
 		cardNo =cNO;
 		expirationDate=expD;
 		crcCode=cvcC;
-		bookingDate=new Date();
+		paymentDate=new Date();
 		
 		
 		return "SucessfullPayment";
+	}
+
+	public payment(Long user_Id, String cardType, Long cardNo, Date expirationDate, int crcCode, Long custNo,
+			String booking_no) {
+		super();
+		this.user_Id = user_Id;
+		this.cardType = cardType;
+		this.cardNo = cardNo;
+		this.expirationDate = expirationDate;
+		this.crcCode = crcCode;
+		this.booking_no = booking_no;
+		this.paymentDate = new Date();
+	}
+
+	@Override
+	public String toString() {
+		return "payment [Payment_Id=" + Payment_Id + ", user_Id=" + user_Id + ", cardType=" + cardType + ", cardNo="
+				+ cardNo + ", expirationDate=" + expirationDate + ", crcCode=" + crcCode + ", custNo=" 
+				+ ", booking_no=" + booking_no + ", bookingDate=" + paymentDate + "]";
 	}
 	
 	

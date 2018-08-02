@@ -1,5 +1,9 @@
 package com.example.demo.repository;
 
-public interface accomodationRep {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.model.accomodation;
+
+public interface accomodationRep extends CrudRepository<accomodation, Long>{
 
 }
